@@ -25,5 +25,5 @@ p = j['ip'].split(',')
 
 print(t,j['ip'])
 
-print(t,'http://%s:8081'%p[0])
+print(t,'http://[%s]:8081'%p[0])
 
