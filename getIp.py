@@ -21,4 +21,9 @@ html = response.read()
 s = str(html[2:-2],'utf-8')
 j = json.loads(s)
 t=time.strftime('%Y/%m/%d %H:%M:%S')
+p = j['ip'].split(',')
+
 print(t,j['ip'])
+
+print(t,'http://%s:8081'%p[0])
+
