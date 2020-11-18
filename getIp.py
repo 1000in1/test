@@ -3,6 +3,8 @@ import subprocess
 import socket
 import re
 import time
+import json
+
  
 #child=subprocess.Popen("ifconfig", shell=True, stdout = subprocess.PIPE)
 #out=child.communicate()
@@ -23,7 +25,13 @@ j = json.loads(s)
 t=time.strftime('%Y/%m/%d %H:%M:%S')
 p = j['ip'].split(',')
 
-print(t,j['ip'])
+#print(t,j['ip'])
 
-print(t,'http://[%s]:8081'%p[0])
+#print(t,'http://[%s]:8081'%p[0])
 
+jj={}
+jj['t']=t
+jj['a']=j['ip']
+jj['b']='http://[%s]:8081'%p[0]
+
+print(json.dumps(jj))
